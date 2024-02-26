@@ -1,0 +1,91 @@
+.tabs {
+  border-bottom: 1px solid #000;
+  background-color: #fff;  
+}
+
+
+.tabsList {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #000;
+  border-bottom: none;
+  > li {
+    flex: 1 1 0;
+    line-height: 40px;
+    text-align: center;
+    .vtab-btn {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 40px;
+      padding: 10px 20px;
+      background-color: #fff;
+      cursor: pointer;
+      &.active {
+        z-index: 1;
+        color: #fff;
+        background-color: blue;
+        &::before {
+          content: none;
+        }
+      }
+    }
+    + li {
+      .vtab-btn {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -1px;
+          height: 100%;
+          border-left: 1px solid #000;
+        }
+      }
+    }
+    
+  }
+  &.inline {
+    display: inline-flex;
+  }
+}
+
+.tabItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background-color: #ddd;
+}
+
+.tabTransition {
+  position: relative;
+  margin-top: 20px;
+  height: 200px;
+  border: 5px solid #000;
+  overflow: hidden;
+}
+.tabsContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  background-color: #ddd;
+  transition: transform 10s ease;
+}
+
+
+// 초기 생성 위치 설정 vue3
+.slide-enter-from {
+	transform: translateX(-100%);
+}
+.slide-leave-to {
+  z-index: 1;
+  background-color: blue;
+	transform: translateX(100%);
+}
+.slide-leave-active {
+  position: absolute;
+}
