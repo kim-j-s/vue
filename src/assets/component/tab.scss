@@ -1,8 +1,7 @@
 .tabs {
   border-bottom: 1px solid #000;
-  background-color: #fff;  
+  background-color: #fff;
 }
-
 
 .tabsList {
   position: relative;
@@ -44,7 +43,6 @@
         }
       }
     }
-    
   }
   &.inline {
     display: inline-flex;
@@ -67,6 +65,7 @@
   overflow: hidden;
 }
 .tabsContent {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,18 +73,72 @@
   height: 200px;
   background-color: #ddd;
   transition: transform 10s ease;
+  overflow: hidden;
 }
-
+.tabsContentItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 // 초기 생성 위치 설정 vue3
-.slide-enter-from {
-	transform: translateX(-100%);
-}
-.slide-leave-to {
-  z-index: 1;
-  background-color: blue;
-	transform: translateX(100%);
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.8s ease;
 }
 .slide-leave-active {
   position: absolute;
 }
+
+.slide-rtl-enter-active,
+.slide-rtl-leave-active {
+  transition: all 0.8s ease;
+}
+.slide-rtl-leave-active {
+  position: absolute;
+}
+
+.slide-ltr-enter-active,
+.slide-ltr-leave-active {
+  transition: all 0.8s ease;
+}
+.slide-ltr-leave-active {
+  position: absolute;
+}
+// 초기 생성 위치 설정 vue3
+
+.slide-enter-from {
+  transform: translateX(100%);
+}
+.slide-leave-to {
+  z-index: 1;
+  background-color: blue;
+  transform: translateX(-100%);
+}
+
+// 오른쪽에서 왼쪽으로 이동
+.slide-rtl-enter-from {
+  transform: translateX(100%);
+}
+.slide-rtl-leave-to {
+  z-index: 1;
+  background-color: blue;
+  transform: translateX(-100%);
+}
+// 오른쪽에서 왼쪽으로 이동
+
+// 왼쪽에서 오른쪽으로 이동
+.slide-ltr-enter-from {
+  transform: translateX(-100%);
+}
+.slide-ltr-leave-to {
+  z-index: 1;
+  background-color: blue;
+  transform: translateX(100%);
+}
+// 왼쪽에서 오른쪽으로 이동

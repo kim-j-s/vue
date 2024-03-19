@@ -1,7 +1,7 @@
 <template>
-	<div class="tabTransition">
-		<slot></slot>
-	</div>
+  <div class="tabTransition">
+    <slot></slot>
+  </div>
 </template>
 
 <script setup></script>
