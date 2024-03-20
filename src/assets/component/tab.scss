@@ -90,7 +90,7 @@
 // 초기 생성 위치 설정 vue3
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.8s ease;
 }
 .slide-leave-active {
   position: absolute;
@@ -98,7 +98,7 @@
 
 .slide-rtl-enter-active,
 .slide-rtl-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.8s ease;
 }
 .slide-rtl-leave-active {
   position: absolute;
@@ -106,7 +106,7 @@
 
 .slide-ltr-enter-active,
 .slide-ltr-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.8s ease;
 }
 .slide-ltr-leave-active {
   position: absolute;
