@@ -13,7 +13,7 @@
         </li>
       </ul>
     </div>
-    <div class="tabsContent" :class="transitionName">
+    <div class="tabsContent">
       <transition :name="transitionName">
         <div class="tabsContentItem" v-if="tabActive1 === 'act1'">act1</div>
         <div class="tabsContentItem" v-else-if="tabActive1 === 'act2'">act2</div>
@@ -57,7 +57,6 @@ const transitionName = ref(null)
 const tabIndex = ref(0)
 
 const activeChnage = (event, index) => {
-  // console.log('인덱스: ', index);
   const $this = sendtab1.value[index].name
   console.log('Tab Name : ', $this)
   tabIndex.value = index
